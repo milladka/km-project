@@ -404,7 +404,7 @@ a:focus {
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	width: 50vw;
+	width: 100%;
 	line-height: 1.5;
 }
 
@@ -957,6 +957,9 @@ a:focus {
 	.section {
 		height: 100vh;
 		min-height: 100vh;
+	}
+	.desc-to {
+		width: 50vw;
 	}
 
 }
