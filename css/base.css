@@ -60,10 +60,6 @@ button:hover {
 	left: 25vw;
 }
 
-.section {
-	min-height: 100vh;
-}
-
 /* Page Loader */
 .js .loading::before {
 	content: '';
@@ -318,8 +314,9 @@ a:focus {
 	justify-content: center;
 	width: 100vw;
 	flex-direction: column;
-	height: 100vh;
+	height: 80vh;
 	overflow: hidden;
+	min-height: 80vh;
 }
 
 #myVideo {
@@ -533,7 +530,8 @@ a:focus {
 	top: -9px;
 	left: 0;
 	position: absolute;
-	width: 125px;
+	/* width: 125px; */
+	width: auto;
 	background-color: #161616;
 	font-family: "Roboto", serif;
 	z-index: 10;
@@ -955,6 +953,12 @@ a:focus {
 	.input {
 		width: 20vw;
 	}
+
+	.section {
+		height: 100vh;
+		min-height: 100vh;
+	}
+
 }
 
 @media (min-width: 1920px) {
