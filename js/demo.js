@@ -1,13 +1,3 @@
-/**
-* demo.js
-* http://www.codrops.com
-*
-* Licensed under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 
-* Copyright 2019, Codrops
-* http://www.codrops.com
-*/
 {
     // helper functions
     const MathUtils = {
@@ -144,15 +134,10 @@
                     setValue: () => docScroll
                 }
             };
-            // set the body's height
             this.setSize();
-            // set the initial values
             this.update();
-            // the <main> element's style needs to be modified
             this.style();
-            // init/bind events
             this.initEvents();
-            // start the render loop
 
             requestAnimationFrame(() => this.render());
         }
@@ -160,29 +145,22 @@
             const target = document.querySelector(targetSelector);
             if (!target) return;
 
-            // موقعیت جدید اسکرول را محاسبه کن
             const targetTop = target.getBoundingClientRect().top + window.scrollY;
 
-            // مقدار `docScroll` را آپدیت کن
             docScroll = targetTop;
 
-            // مقدار `previous` و `current` را برابر مقدار جدید قرار بده تا از پرش جلوگیری شود
             this.renderedStyles.translationY.previous = targetTop;
             this.renderedStyles.translationY.current = targetTop;
 
-            // مقدار `setValue` را بازنویسی کن تا مقدار جدید را حفظ کند
             this.renderedStyles.translationY.setValue = () => targetTop;
 
-            // مقدار ترجمه (`translateY`) را برای هماهنگ‌سازی تغییر بده
             this.layout();
 
-            // مقدار `isVisible` آیتم‌ها را دوباره بررسی کن
             this.items.forEach(item => {
-                item.getSize(); // آپدیت سایز آیتم‌ها
+                item.getSize();
                 item.render();
             });
 
-            // اسکرول نرم را اعمال کن
             window.scrollTo({
                 top: targetTop,
                 behavior: 'smooth'
@@ -243,18 +221,28 @@
 
     const smoothScrollInstance = new SmoothScroll();
 
-    document.getElementById('scrollButton').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#ms');
+    document.getElementById('scrollButtonAbout').addEventListener('click', () => {
+        smoothScrollInstance.scrollToItem('#about');
     });
-    document.getElementById('scrollButtontas').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#tas');
-    });
+    // document.getElementById('scrollButtoncontact').addEventListener('click', () => {
+    //     smoothScrollInstance.scrollToItem('#contact');
+    // });
     document.getElementById('scrollButtonHome').addEventListener('click', () => {
         smoothScrollInstance.scrollToItem('#home');
     });
     document.getElementById('scrollButtonWork').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#work');
+        smoothScrollInstance.scrollToItem('#sliderSection');
     });
+    document.getElementById('scrollButtonArchitecture').addEventListener('click', () => {
+        smoothScrollInstance.scrollToItem('#architecture');
+    });
+    document.getElementById('scrollButtonInterior').addEventListener('click', () => {
+        smoothScrollInstance.scrollToItem('#interior');
+    });
+    document.getElementById('scrollButtonContacts').addEventListener('click', () => {
+        smoothScrollInstance.scrollToItem('#contact');
+    });
+    
 
 
 
@@ -271,14 +259,13 @@
     const removeLoader = () => {
         return new Promise((resolve) => {
             document.body.classList.remove('loading');
-            requestAnimationFrame(resolve); // اطمینان از پردازش تغییرات DOM
+            requestAnimationFrame(resolve);
         });
     };
     // And then..
     preloadImages()
-        .then(() => removeLoader()) // سپس کلاس حذف می‌شود
+        .then(() => removeLoader())
         .then(() => {
-            // حالا gsap اجرا می‌شود
 
             gsap.to(".handler", {
                 start: "top 95%",
@@ -316,15 +303,12 @@
             let path = document.querySelector("#animatedPath");
             let length = path.getTotalLength();
 
-            // تنظیم مقدار اولیه برای مخفی کردن خط
             gsap.set(path, { strokeDasharray: length, strokeDashoffset: length });
 
-            // انیمیشن برای کشیده شدن خط از چپ به راست
             gsap.to(path, { strokeDashoffset: 0, duration: 15, ease: "power2.out" });
 
         })
         .then(() => {
-            // سپس سایر عملیات اجرا می‌شوند
             getPageYScroll();
             new SmoothScroll();
         });
