@@ -314,9 +314,9 @@ a:focus {
 	justify-content: center;
 	width: 100vw;
 	flex-direction: column;
-	height: 80vh;
+	height: 95vh;
 	overflow: hidden;
-	min-height: 80vh;
+	min-height: 95vh;
 }
 
 #myVideo {
