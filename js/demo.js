@@ -221,8 +221,10 @@
 
     const smoothScrollInstance = new SmoothScroll();
 
-    function Menu(item){
+    function Menu(item) {
         smoothScrollInstance.scrollToItem(item);
+        gsap.to("#sidebar", { x: "-100%", duration: 0.5, ease: "power2.in" });
+        gsap.to("#menuButton", { opacity: 1, duration: 0.3, ease: "power2.in" });
     }
 
     /***********************************/

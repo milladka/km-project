@@ -4,14 +4,32 @@ const cursor = document.createElement("div");
 cursor.classList.add("custom-cursor");
 document.body.appendChild(cursor);
 
-document.addEventListener("mousemove", (e) => {
-    gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.1,
-        ease: "power2.out"
+document.addEventListener("DOMContentLoaded", function () {
+    const cursor = document.querySelector(".custom-cursor");
+
+    function isTouchDevice() {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    if (isTouchDevice()) {
+        cursor.style.display = "none";
+        return;
+    }
+    if (!isTouchDevice()) {
+        document.body.style.cursor = "none";
+    }
+
+    document.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.1,
+            ease: "power2.out"
+        });
     });
 });
+
+
 
 let addAnimation = function () {
     $(".skew-up").each(function (index) {
@@ -117,7 +135,7 @@ const buttonScrollAmount = 300;
 let isDragging = false;
 let startX, scrollLeft;
 
-sliderSection.addEventListener("wheel", (event) => {
+sliderSection?.addEventListener("wheel", (event) => {
     const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
     const currentScroll = slider.scrollLeft;
 
@@ -129,7 +147,7 @@ sliderSection.addEventListener("wheel", (event) => {
     slider.scrollBy({ left: event.deltaY * scrollSpeed, behavior: "smooth" });
 }, { passive: false });
 
-slider.addEventListener("mousedown", (e) => {
+slider?.addEventListener("mousedown", (e) => {
     isDragging = true;
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
@@ -142,7 +160,7 @@ slider.addEventListener("mousedown", (e) => {
     // slider.style.cursor = "grabbing";
 });
 
-slider.addEventListener("mouseleave", () => {
+slider?.addEventListener("mouseleave", () => {
     isDragging = false;
     let cursor = document.querySelector('.custom-cursor');
     gsap.to(cursor, {
@@ -153,7 +171,7 @@ slider.addEventListener("mouseleave", () => {
     //slider.style.cursor = "grab";
 });
 
-slider.addEventListener("mouseup", () => {
+slider?.addEventListener("mouseup", () => {
     isDragging = false;
     let cursor = document.querySelector('.custom-cursor');
     gsap.to(cursor, {
@@ -164,7 +182,7 @@ slider.addEventListener("mouseup", () => {
     //slider.style.cursor = "grab";
 });
 
-slider.addEventListener("mousemove", (e) => {
+slider?.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
@@ -200,28 +218,28 @@ interactiveElements.forEach((el) => {
     });
 });
 
-slider.addEventListener("touchstart", (e) => {
+slider?.addEventListener("touchstart", (e) => {
     isDragging = true;
     startX = e.touches[0].pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
 });
 
-slider.addEventListener("touchend", () => {
+slider?.addEventListener("touchend", () => {
     isDragging = false;
 });
 
-slider.addEventListener("touchmove", (e) => {
+slider?.addEventListener("touchmove", (e) => {
     if (!isDragging) return;
     const x = e.touches[0].pageX - slider.offsetLeft;
     const walk = (x - startX) * 2;
     slider.scrollLeft = scrollLeft - walk;
 });
 
-prevBtn.addEventListener("click", () => {
+prevBtn?.addEventListener("click", () => {
     slider.scrollBy({ left: -buttonScrollAmount, behavior: "smooth" });
 });
 
-nextBtn.addEventListener("click", () => {
+nextBtn?.addEventListener("click", () => {
     slider.scrollBy({ left: buttonScrollAmount, behavior: "smooth" });
 });
 

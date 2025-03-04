@@ -23,7 +23,7 @@ body {
 	font-family: paralucent, sans-serif;
 	font-family: quiroh, sans-serif;
 	font-family: mr-eaves-xl-sans, sans-serif;
-	cursor: none;
+	/* cursor: none; */
 }
 
 .custom-cursor {
@@ -40,7 +40,7 @@ body {
 
 a:hover,
 button:hover {
-	cursor: none;
+	cursor: auto;
 }
 
 .header {
@@ -216,7 +216,7 @@ a:focus {
 }
 
 #contact {
-	height: 50vh;
+	height: 100%;
 }
 
 .relative {
@@ -591,8 +591,11 @@ a:focus {
 .holder-contact {
 	position: relative;
 	display: flex;
-	align-items: center;
 	height: 100%;
+	flex-direction: column;
+	gap: 33px;
+	align-items: start;
+	padding: 18px 0;
 }
 
 .border-top-contact {
@@ -608,6 +611,7 @@ a:focus {
 
 .section-contact {
 	flex: 1;
+	width: 100%;
 }
 
 .one-pes {
@@ -628,6 +632,7 @@ a:focus {
 	background-color: rgba(255, 255, 255, 0.212);
 	transform: scaleY(0);
 	transform-origin: top;
+	display: none;
 }
 
 .social-holder {
@@ -650,7 +655,7 @@ a:focus {
 	background: none;
 	padding: 6px;
 	display: block;
-	width: 20vw;
+	width: 100%;
 	border-radius: 2px;
 	color: white;
 	outline: none;
@@ -774,14 +779,15 @@ a:focus {
 	position: fixed;
 	top: 15px;
 	left: 15px;
-	background: black;
+	background: #16161680;
 	color: white;
 	border: none;
-	padding: 10px;
+	padding: 7px;
 	cursor: pointer;
 	z-index: 10;
 	opacity: 1;
 	transition: opacity 0.3s ease;
+	border-radius: 2px;
 }
 
 .sidebar {
@@ -814,9 +820,10 @@ a:focus {
 	flex-direction: column;
 	gap: 10px;
 }
-.nav-links .menu_item{
+
+.nav-links .menu_item {
 	font-size: 1rem;
-    padding: 12px;
+	padding: 12px;
 }
 
 
@@ -927,6 +934,27 @@ a:focus {
 		width: 40vw;
 	}
 
+	a:hover,
+	button:hover {
+		cursor: none;
+	}
+
+	#contact {
+		height: 50vh;
+	}
+
+	.holder-contact {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.border-left-opes {
+		display: block;
+	}
+
+	.input {
+		width: 20vw;
+	}
 }
 
 @media (min-width: 1920px) {
