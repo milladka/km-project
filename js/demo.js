@@ -221,30 +221,9 @@
 
     const smoothScrollInstance = new SmoothScroll();
 
-    document.getElementById('scrollButtonAbout').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#about');
-    });
-    // document.getElementById('scrollButtoncontact').addEventListener('click', () => {
-    //     smoothScrollInstance.scrollToItem('#contact');
-    // });
-    document.getElementById('scrollButtonHome').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#home');
-    });
-    document.getElementById('scrollButtonWork').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#sliderSection');
-    });
-    document.getElementById('scrollButtonArchitecture').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#architecture');
-    });
-    document.getElementById('scrollButtonInterior').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#interior');
-    });
-    document.getElementById('scrollButtonContacts').addEventListener('click', () => {
-        smoothScrollInstance.scrollToItem('#contact');
-    });
-    
-
-
+    function Menu(item){
+        smoothScrollInstance.scrollToItem(item);
+    }
 
     /***********************************/
     /********** Preload stuff **********/

@@ -46,16 +46,18 @@ button:hover {
 .header {
 	background: #161616e0;
 	height: 63px;
-	width: 100vw;
 	position: fixed;
 	z-index: 10;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
 	top: -100px;
 	opacity: 0;
 	border-radius: 0 0 10px 10px;
+	display: none;
+	width: 50vw;
+	gap: 1rem;
+	left: 25vw;
 }
 
 .section {
@@ -300,7 +302,7 @@ a:focus {
 	opacity: 0;
 	filter: blur(10px);
 	z-index: 10;
-	width: 40vw;
+	width: 90vw;
 	position: absolute;
 	bottom: 5vh;
 }
@@ -768,6 +770,57 @@ a:focus {
 	color: #ccc;
 }
 
+.menu-button {
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	background: black;
+	color: white;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+	z-index: 10;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 100vh;
+	background: #222222d2;
+	color: white;
+	padding: 20px;
+	transform: translateX(-100%);
+	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+	z-index: 20;
+}
+
+.close-button {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	z-index: 20;
+	position: fixed;
+}
+
+.nav-links {
+	margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.nav-links .menu_item{
+	font-size: 1rem;
+    padding: 12px;
+}
+
+
+
 /* تغییرات برای تبلت */
 @media (min-width: 768px) {
 	._top {
@@ -823,9 +876,7 @@ a:focus {
 	}
 
 	.header {
-		width: 50vw;
-		gap: 1rem;
-		left: 25vw;
+		display: flex;
 	}
 
 	.menu_item {
@@ -865,6 +916,15 @@ a:focus {
 
 	.holder-sec-one {
 		width: auto;
+	}
+
+	.menu-button,
+	.sidebar {
+		display: none;
+	}
+
+	.svg-holder {
+		width: 40vw;
 	}
 
 }

@@ -16,12 +16,39 @@
 <body class="loading">
 	<main>
 		<div class="header">
-			<button class="menu_item" id="scrollButtonHome">Home</button>
-			<button class="menu_item" id="scrollButtonAbout">About</button>
-			<button class="menu_item" id="scrollButtonWork">Works</button>
-			<button class="menu_item" id="scrollButtonArchitecture">Architecture</button>
-			<button class="menu_item" id="scrollButtonInterior">Interior</button>
-			<button class="menu_item" id="scrollButtonContacts">Contact us</button>
+			<button class="menu_item" onclick="Menu('#home')">Home</button>
+			<button class="menu_item" onclick="Menu('#about')">About</button>
+			<button class="menu_item" onclick="Menu('#work')">Works</button>
+			<button class="menu_item" onclick="Menu('#architecture')">Architecture</button>
+			<button class="menu_item" onclick="Menu('#interior')">Interior</button>
+			<button class="menu_item" onclick="Menu('#blog')">blog</button>
+			<button class="menu_item" onclick="Menu('#contact')">Contact us</button>
+		</div>
+		<button class="menu-button" id="menuButton" onclick="openMenu()">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+				class="lucide lucide-menu">
+				<line x1="4" x2="20" y1="12" y2="12" />
+				<line x1="4" x2="20" y1="6" y2="6" />
+				<line x1="4" x2="20" y1="18" y2="18" />
+			</svg>
+		</button>
+		<div class="sidebar" id="sidebar">
+			<button class="close-button" onclick="closeMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+					height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+					stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+					<path d="M18 6 6 18" />
+					<path d="m6 6 12 12" />
+				</svg></button>
+			<nav class="nav-links">
+				<button class="menu_item" onclick="Menu('#home')">Home</button>
+				<button class="menu_item" onclick="Menu('#about')">About</button>
+				<button class="menu_item" onclick="Menu('#work')">Works</button>
+				<button class="menu_item" onclick="Menu('#architecture')">Architecture</button>
+				<button class="menu_item" onclick="Menu('#interior')">Interior</button>
+				<button class="menu_item" onclick="Menu('#blog')">blog</button>
+				<button class="menu_item" onclick="Menu('#contact')">Contact us</button>
+			</nav>
 		</div>
 		<div data-scroll>
 
@@ -265,7 +292,7 @@
 
 				</div> -->
 
-				<div class="item portfolio-section">
+				<div class="item portfolio-section" id="work">
 					<div>
 						<div class="skew-up desc text-center">
 							<div class="word-line font-large">
