@@ -339,6 +339,7 @@ a:focus {
 	opacity: 0;
 	font-size: 1rem;
 	line-height: 1.5;
+	padding: 10px;
 }
 
 .word-line {
@@ -958,8 +959,13 @@ a:focus {
 		height: 100vh;
 		min-height: 100vh;
 	}
+
 	.desc-to {
 		width: 50vw;
+	}
+
+	.skew-up.desc {
+		font-size: 1.5rem;
 	}
 
 }
