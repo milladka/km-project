@@ -144,25 +144,22 @@
         scrollToItem(targetSelector) {
             const target = document.querySelector(targetSelector);
             if (!target) return;
-
+        
+            // بازمحاسبه ارتفاع صفحه
+            this.setSize(); 
+        
             const targetTop = target.getBoundingClientRect().top + window.scrollY;
-
-            docScroll = targetTop;
-
-            this.renderedStyles.translationY.previous = targetTop;
-            this.renderedStyles.translationY.current = targetTop;
-
-            this.renderedStyles.translationY.setValue = () => targetTop;
-
-            this.layout();
-
-            this.items.forEach(item => {
-                item.getSize();
-                item.render();
-            });
-
+        
+            // دریافت ارتفاع صحیح
+            const maxScroll = this.DOM.scrollable.scrollHeight - window.innerHeight;
+        
+            // محدود کردن مقدار اسکرول به حداکثر مقدار مجاز
+            const finalScrollPosition = Math.min(targetTop, maxScroll);
+        
+            this.renderedStyles.translationY.setValue = () => window.scrollY;
+        
             window.scrollTo({
-                top: targetTop,
+                top: finalScrollPosition,
                 behavior: 'smooth'
             });
         }
