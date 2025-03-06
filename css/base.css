@@ -211,6 +211,21 @@ a:focus {
 	--image: url('../img/bg-contact.webp');
 }
 
+.item .item__img-wrap.nine {
+	--aspect-ratio: 1.2;
+	--image: url('../img/team/1-Albert.webp');
+}
+
+.item .item__img-wrap.ten {
+	--aspect-ratio: 1.2;
+	--image: url('../img/team/2-Shani.webp');
+}
+
+.item .item__img-wrap.eleven {
+	--aspect-ratio: 1.2;
+	--image: url('../img/team/3-Shahar.webp');
+}
+
 #contact {
 	height: 100%;
 }
@@ -258,6 +273,17 @@ a:focus {
 	--overflow: 60px;
 }
 
+.item__img--t10 {
+	--overflow: 10px !important;
+}
+
+.item__img--t11 {
+	--overflow: 10px !important;
+}
+
+.item__img--t12 {
+	--overflow: 10px !important;
+}
 
 .item__caption {
 	padding: 1rem;
@@ -909,11 +935,24 @@ a:focus {
 	background: rgba(0, 0, 0, 0.8);
 }
 
+#team {
+	height: auto;
+}
 
+.holder-team {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 15px;
+	margin-top: 25px;
+}
 
-
-
-
+.team-name{
+	text-align: center;
+	padding: 30px 0;
+	font-size: 1.2rem;
+}
 
 /* تغییرات برای تبلت */
 @media (min-width: 768px) {
@@ -1086,13 +1125,21 @@ a:focus {
 		height: 70vh;
 	}
 
+	.holder-team {
+		flex-direction: row;
+	}
+	#team {
+		height: 70vh;
+	}
+
 }
 
 /* فقط برای نمایشگر حدود 1583px */
 @media (min-width: 1400px) and (max-width: 1600px) {
-    .arta-slider-container {
+	.arta-slider-container {
 		width: 60%;
 	}
+
 	.arta-slide-item {
 		flex: 0 0 50%;
 		width: calc(100% / 2);
@@ -1101,7 +1148,7 @@ a:focus {
 
 /* فقط برای نمایشگر حدود 1903px */
 @media (min-width: 1601px) and (max-width: 1903px) {
-    .arta-slider-container {
+	.arta-slider-container {
 		width: 77%;
 	}
 }
