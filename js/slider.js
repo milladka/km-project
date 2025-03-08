@@ -36,3 +36,23 @@ document.querySelectorAll(".arta-slider-container").forEach((sliderContainer) =>
     // تنظیم دوباره اسلایدر هنگام تغییر اندازه صفحه
     window.addEventListener("resize", updateSlide);
 });
+
+document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
+    let button = wrapper.querySelector(".toggle-button");
+    let sliderContainer = wrapper.querySelector(".arta-slider-container");
+
+    button.addEventListener("click", function () {
+        if (sliderContainer.classList.contains("hidden")) {
+            sliderContainer.classList.remove("hidden");
+            button.style.display = "none";
+            gsap.to(sliderContainer, {
+                duration: 0.6,
+                opacity: 1,
+                y: 0,
+                ease: "power3.out"
+            });
+
+        }
+    });
+});
+
