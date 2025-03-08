@@ -904,9 +904,9 @@ a:focus {
 .arta-slide-item {
 	flex: 0 0 100%;
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	object-fit: cover;
-	border-radius: 10px;
+	border-radius: 3px;
 }
 
 /* دکمه‌های ناوبری */
@@ -948,7 +948,7 @@ a:focus {
 	margin-top: 25px;
 }
 
-.team-name{
+.team-name {
 	text-align: center;
 	padding: 30px 0;
 	font-size: 1.2rem;
@@ -1112,8 +1112,8 @@ a:focus {
 	}
 
 	.arta-slide-item {
-		flex: 0 0 30%;
-		width: calc(100% / 3);
+		flex: 0 0 50%;
+		width: calc(100% / 2);
 	}
 
 	.arta-slider-container {
@@ -1128,6 +1128,7 @@ a:focus {
 	.holder-team {
 		flex-direction: row;
 	}
+
 	#team {
 		height: 70vh;
 	}
@@ -1137,9 +1138,11 @@ a:focus {
 /* فقط برای نمایشگر حدود 1583px */
 @media (min-width: 1400px) and (max-width: 1600px) {
 	.arta-slider-container {
-		width: 60%;
+		width: 54%;
 	}
-
+	#team {
+		height: auto;
+	}
 	.arta-slide-item {
 		flex: 0 0 50%;
 		width: calc(100% / 2);
@@ -1165,5 +1168,13 @@ a:focus {
 
 	.font-large {
 		font-size: 5rem;
+	}
+
+	.arta-slider-container {
+		width: 77%;
+	}
+
+	.arta-slide-item {
+		height: 400px;
 	}
 }

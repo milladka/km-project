@@ -7,7 +7,7 @@ document.querySelectorAll(".arta-slider-container").forEach((sliderContainer) =>
 
     // محاسبه تعداد اسلایدهای نمایشی بر اساس اندازه صفحه
     function getSlidesToShow() {
-        return window.innerWidth >= 768 ? 3 : 1; // ۳ در دسکتاپ، ۱ در موبایل
+        return window.innerWidth >= 768 ? 2 : 1; // ۳ در دسکتاپ، ۱ در موبایل
     }
 
     function updateSlide() {
@@ -18,15 +18,19 @@ document.querySelectorAll(".arta-slider-container").forEach((sliderContainer) =>
     nextBtn.addEventListener("click", () => {
         if (index < slideItems.length - getSlidesToShow()) {
             index++;
-            updateSlide();
+        } else {
+            index = 0; // بازگشت به ابتدای اسلایدها
         }
+        updateSlide();
     });
 
     prevBtn.addEventListener("click", () => {
         if (index > 0) {
             index--;
-            updateSlide();
+        } else {
+            index = slideItems.length - getSlidesToShow(); // بازگشت به آخرین اسلاید
         }
+        updateSlide();
     });
 
     // تنظیم دوباره اسلایدر هنگام تغییر اندازه صفحه
