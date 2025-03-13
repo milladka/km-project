@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".portfolio-item");
     const section = document.querySelector(".portfolio-section");
     const container = document.querySelector(".in-wrapper-section");
-    
+
     const emptyBoxIndexes = new Set();
     while (emptyBoxIndexes.size < Math.ceil(items.length * 0.2)) { // مثلا ۲۰٪ آیتم‌ها را خالی کنیم
         emptyBoxIndexes.add(Math.floor(Math.random() * items.length));
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("mouseleave", () => {
             gsap.to(overlay, { opacity: 0, y: 20, duration: 0.3, ease: "power2.in" });
             gsap.to(img, { scale: 1, duration: 3, ease: "power2.in" });
+            // jjjj
         });
     });
 });

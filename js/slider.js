@@ -51,8 +51,44 @@ document.querySelectorAll(".slider-wrapper").forEach(wrapper => {
                 y: 0,
                 ease: "power3.out"
             });
-
         }
     });
 });
 
+
+document.querySelectorAll(".portfolio-item").forEach(item => {
+    let button = item.querySelector(".toggle-button");
+    let sliderContainer = item.querySelector(".arta-slider-container");
+    if (!sliderContainer) return;
+    let slides = sliderContainer.querySelector(".arta-slide-track");
+    if (!slides) return;
+    item.addEventListener("mouseleave", function () {
+        closeSlider();
+    });
+
+    document.addEventListener("touchstart", function (event) {
+        if (!item.contains(event.target)) {
+            closeSlider();
+        }
+    });
+
+    function closeSlider() {
+        if (!sliderContainer.classList.contains("hidden")) {
+            gsap.to(sliderContainer, {
+                duration: 0.6,
+                opacity: 0,
+                y: 20,
+                ease: "power3.in",
+                onComplete: () => {
+                    sliderContainer.classList.add("hidden");
+                    button.style.display = "block";
+                    resetSlider();
+                }
+            });
+        }
+    }
+
+    function resetSlider() {
+        slides.style.transform = "translateX(0px)";
+    }
+});
