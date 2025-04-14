@@ -10,6 +10,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="https://use.typekit.net/qrg0pyh.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
+	<link rel="stylesheet" type="text/css" href="css/blog.css" />
 	<script>document.documentElement.className = "js"; var supportsCssVars = function () { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e }; supportsCssVars() || alert("Please view this website in a modern browser that supports CSS Variables.");</script>
 </head>
 
@@ -428,54 +429,87 @@
 							</h2>
 						</div>
 					</div>
-					<div class="holder-blogs">
-						<div class="items">
-							<div class="holder-items">
-								<div class="image-blog-holder">
 
-									<img src="https://designex.ae/wp-content/uploads/2024/11/Frame-1.webp" />
+					<div class="blog-slider-container">
+						<button id="blogSliderPrev" class="blog-slider-nav-btn">❮</button>
+						<div class="blog-slider-track" id="blogSliderTrack">
+
+							<!-- Blog Post 1 -->
+							<div class="blog-slider-item">
+								<div class="blog-slider-card">
+									<div class="blog-slider-image">
+										<img src="https://designex.ae/wp-content/uploads/2024/11/Frame-1.webp"
+											alt="blog image">
+									</div>
+									<div class="blog-slider-title">
+										Redefining Luxury in the Modern Era: A Shift Towards Personalisation,
+										Well-being,
+										and Ethical Responsibility
+									</div>
 								</div>
-								<div class="title">
-									Redefining Luxury in the Modern Era: A Shift Towards Personalisation, Well-being,
-									and Ethical Responsibility
+							</div>
+
+							<!-- Blog Post 2 -->
+							<div class="blog-slider-item">
+								<div class="blog-slider-card">
+									<div class="blog-slider-image">
+										<img src="./img/1.jpg" alt="blog image">
+									</div>
+									<div class="blog-slider-title">
+										Redefining Luxury in the Modern Era: A Shift Towards Personalisation
+									</div>
+								</div>
+							</div>
+
+							<!-- Blog Post 3 -->
+							<div class="blog-slider-item">
+								<div class="blog-slider-card">
+									<div class="blog-slider-image">
+										<img src="./img/5.jpg" alt="blog image">
+									</div>
+									<div class="blog-slider-title">
+										Redefining Luxury in the Modern Era: A Shift Towards Personalisation, Well-being
+									</div>
+								</div>
+							</div>
+
+							<!-- Blog Post 4 -->
+							<div class="blog-slider-item">
+								<div class="blog-slider-card">
+									<div class="blog-slider-image">
+										<img src="https://placehold.co/400x300" alt="blog image">
+									</div>
+									<div class="blog-slider-title">
+										The Future of Luxury: Eco-Friendly Materials & Custom Experiences
+									</div>
+								</div>
+							</div>
+
+							<!-- Blog Post 5 -->
+							<div class="blog-slider-item">
+								<div class="blog-slider-card">
+									<div class="blog-slider-image">
+										<img src="https://placehold.co/400x300/EEE/333" alt="blog image">
+									</div>
+									<div class="blog-slider-title">
+										Wellness & Sustainability: The New Luxury Standard
+									</div>
 								</div>
 							</div>
 
 						</div>
-						<div class="items">
-							<div class="holder-items">
-								<div class="image-blog-holder">
-
-									<img src="./img/1.jpg" />
-								</div>
-								<div class="title">
-									Redefining Luxury in the Modern Era: A Shift Towards Personalisation
-								</div>
-							</div>
-
-						</div>
-						<div class="items">
-							<div class="holder-items">
-								<div class="image-blog-holder">
-
-									<img src="./img/5.jpg" />
-								</div>
-								<div class="title">
-									Redefining Luxury in the Modern Era: A Shift Towards Personalisation, Well-being
-								</div>
-							</div>
-
-						</div>
+						<button id="blogSliderNext" class="blog-slider-nav-btn">❯</button>
 					</div>
 				</div>
 
 				<div class="item" id="team">
-					<div class="skew-up desc text-center">
-						<div class="word-line font-large">
-							Team
-						</div>
-						<div class="word-line">
-							Together, we turn spaces into art
+					<div>
+						<div class="item__caption text-center">
+							<h2 class="skew-up">
+								<div class="word-line">
+									<div class="word">TEAM</div>
+								</div>
+							</h2>
 						</div>
 					</div>
 					<div class="holder-team">
@@ -571,6 +605,7 @@
 	<script src="js/index.js"></script>
 	<script src="js/work.js"></script>
 	<script src="js/slider.js"></script>
+	<script src="js/blog.js"></script>
 </body>
 
 </html>

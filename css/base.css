@@ -791,7 +791,7 @@ a:focus {
 	width: 100%;
 	height: 100%;
 	align-items: end;
-    justify-content: end;
+	justify-content: end;
 }
 
 .text-holder-portfolio {
@@ -1054,6 +1054,10 @@ a:focus {
 
 	.handle-blog {
 		height: 100vh;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.image-blog-holder {
