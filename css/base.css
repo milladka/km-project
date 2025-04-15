@@ -103,7 +103,8 @@ a {
 
 a:hover,
 a:focus {
-	color: var(--color-link-hover);
+	/* color: var(--color-link-hover); */
+	color: white;
 	outline: none;
 }
 

@@ -64,6 +64,9 @@
     font-weight: bold;
     line-height: 1.4;
 }
+.readmore {
+    text-align: right;
+  }
 
 /* ریسپانسیو */
 @media (max-width: 1024px) {
