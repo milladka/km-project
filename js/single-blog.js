@@ -1,10 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  gsap.from(".back-home-btn", {
-    y: 20,
-    opacity: 0,
-    duration: 0.6,
-    delay: 0.3
-  });
   gsap.from(".post-title", { y: -50, opacity: 0, duration: 1 });
   gsap.from(".meta", { y: -20, opacity: 0, duration: 1, delay: 0.3 });
   gsap.from(".post-image", { scale: 0.9, opacity: 0, duration: 1, delay: 0.6 });
